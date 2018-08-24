@@ -4,7 +4,7 @@ const timeout = 1000 * 60 * 5; // timeout to send the message 5 min
 
 const AutoDM = () => {
   const stream = T.stream("user");
-  console.log("Start Sending Auto Direct Message 🚀🚀🚀");
+  console.log("Iniciado el proceso de envio automatico de Mensajes Directos 🚀🚀🚀");
   stream.on("follow", SendMessage);
 };
 
@@ -17,32 +17,32 @@ const SendMessage = user => {
   };
   // the follow stream track if I follow author person too.
   if (screen_name != my_user_name) {
-    console.log(" 🎉🎉🎉🎉 New Follower  🎉🎉🎉🎉🎉 ");
+    console.log(" 🎉🎉🎉🎉 NUEVO Follower  🎉🎉🎉🎉🎉 ");
     setTimeout(() => {
       T.post("direct_messages/new", obj)
         .catch(err => {
           console.error("error", err.stack);
         })
         .then(result => {
-          console.log(`Message sent successfully To  ${screen_name}  💪💪`);
+          console.log(`Mensaje enviado correctamente a ${screen_name}  💪💪`);
         });
     }, timeout);
   }
 };
 const GenerateMessage = name => {
   const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    "Lunes",
+    "Martes",
+    "Miercoles",
+    "Jueves",
+    "Viernes",
+    "Sabado",
+    "Domingo"
   ];
   const d = new Date();
   const dayName = days[d.getDay()];
-  return `Hi ${name} Thanks for .... \n Happy ${dayName} 😊😊 `; // your message
-  // My message   return `Hi ${name} Thanks for being a part of my social media network. I'am the @PicsrushE founder,A new Online Image Editor completely with web technologies,I'm also a reactjs developer and medium blogger.\n Happy to discuss anytime 😊  \n Happy ${dayName} 😊😊 `;
+  return `Hola ${name} muchísimas gracias por el follow!! No quiero molestarte mucho más, soy cantante y estoy intentando crecer en el mundillo jejeje estoy creando una web (https://andreaborras.com) para ver si así avanzo más rápido
+  si pudieras echarle un vistazo sería genial! Y sobretodo si pudieras avisarme si ves algo mal o raro también sería fastantico así lo arreglo!! \n Muchas gracias de nuevo, un abrazo <3<3 \n 😊😊 `; // your message
 };
 
 module.exports = AutoDM;

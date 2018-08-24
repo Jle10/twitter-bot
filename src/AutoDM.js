@@ -6,6 +6,7 @@ const AutoDM = () => {
   const stream = T.stream("user");
   console.log("Iniciado el proceso de envio automatico de Mensajes Directos 🚀🚀🚀");
   stream.on("follow", SendMessage);
+  console.log("Aqui no llegué")
 };
 
 const SendMessage = user => {

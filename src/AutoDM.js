@@ -1,6 +1,6 @@
 const T = require("./Twit.js");
 const my_user_name = require("../config").userName;
-const timeout = 1000 * 60 * 5; // timeout to send the message 5 min
+const timeout = 1000 * 60 * 5; // timeout para enviar el mensaje 5 minutos despues del follow
 
 const AutoDM = () => {
   const stream = T.stream("user");
@@ -9,12 +9,13 @@ const AutoDM = () => {
 };
 
 const SendMessage = user => {
-  const { screen_name, name } = user.source;
   console.log("Trying to send message");
+  const { screen_name, name } = user.source;
   const obj = {
     screen_name,
     text: GenerateMessage(name)
   };
+  console.log("El user.source es : " + user.source);
   // the follow stream track if I follow author person too.
   if (screen_name != my_user_name) {
     console.log(" 🎉🎉🎉🎉 NUEVO Follower  🎉🎉🎉🎉🎉 ");

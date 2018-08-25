@@ -7,7 +7,7 @@ const AutoDM = () => {
   console.log("Iniciado el proceso de envio automatico de Mensajes Directos 🚀🚀🚀");
   T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
   console.log(data)
-});
+})
   //stream.on("follow", SendMessage);
 };
 
@@ -47,6 +47,6 @@ const GenerateMessage = name => {
   const dayName = days[d.getDay()];
   return `Hola ${name} muchísimas gracias por el follow!! No quiero molestarte mucho más, soy cantante y estoy intentando crecer en el mundillo jejeje estoy creando una web (https://andreaborras.com) para ver si así avanzo más rápido
   si pudieras echarle un vistazo sería genial! Y sobretodo si pudieras avisarme si ves algo mal o raro también sería fastantico así lo arreglo!! \n Muchas gracias de nuevo, un abrazo <3<3 \n 😊😊 `; // your message
-};
+};*/
 
-module.exports = AutoDM;*/
+module.exports = AutoDM;

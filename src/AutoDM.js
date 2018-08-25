@@ -10,7 +10,7 @@ const AutoDM = () => {
 
 const SendMessage = user => {
   const { screen_name, name } = user.source;
-
+  console.log("Trying to send message");
   const obj = {
     screen_name,
     text: GenerateMessage(name)
@@ -19,7 +19,7 @@ const SendMessage = user => {
   if (screen_name != my_user_name) {
     console.log(" 🎉🎉🎉🎉 NUEVO Follower  🎉🎉🎉🎉🎉 ");
     setTimeout(() => {
-      T.post("direct_messages/new", obj)
+      T.post("direct_messages/events/new", obj)
         .catch(err => {
           console.error("error", err.stack);
         })

@@ -5,10 +5,13 @@ const timeout = 1000 * 60 * 5; // timeout para enviar el mensaje 5 minutos despu
 const AutoDM = () => {
   const stream = T.stream("user");
   console.log("Iniciado el proceso de envio automatico de Mensajes Directos 🚀🚀🚀");
-  stream.on("follow", SendMessage);
+  T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
+  console.log(data)
+});
+  //stream.on("follow", SendMessage);
 };
 
-const SendMessage = user => {
+/*const SendMessage = user => {
   console.log("Trying to send message");
   const { screen_name, name } = user.source;
   const obj = {
@@ -46,4 +49,4 @@ const GenerateMessage = name => {
   si pudieras echarle un vistazo sería genial! Y sobretodo si pudieras avisarme si ves algo mal o raro también sería fastantico así lo arreglo!! \n Muchas gracias de nuevo, un abrazo <3<3 \n 😊😊 `; // your message
 };
 
-module.exports = AutoDM;
+module.exports = AutoDM;*/
